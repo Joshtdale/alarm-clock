@@ -5,7 +5,7 @@ const alarmBtn = document.getElementById('alarm')
 
 
 function select() {
-    // selectors[0].innerHTML = selectors[1].innerHTML = selectors[2].innerHTML = "";
+    selectors[0].innerHTML = selectors[1].innerHTML = selectors[2].innerHTML = "";
     selectors[0].innerHTML = `<option value="hrs" selected disabled hidden>Hour</option>`;
     selectors[1].innerHTML = `<option value="min" selected disabled hidden>Minute</option>`;
     selectors[2].innerHTML = `<option value="AM/PM" selected disabled hidden>AM/PM</option>`;
@@ -70,10 +70,10 @@ const clock = document.getElementById('clock')
 
 // clock text = values of hrs, min, sec, and ampm
 // adds number values together with colon ":" and ' (single space)' so that innerText = hrs:min:sec am/pm
-    // clock.innerText = hrs + ':' + min + ':' + sec + ' ' + ampm;
-    clock.innerText = `${hrs}:${min}:${sec} ${ampm}`;
-
-        if (alarmTime === `${hrs}:${min}:${sec} ${ampm}`) {
+    clock.innerText = hrs + ':' + min + ':' + sec + ' ' + ampm;
+    // clock.innerText = `${hrs}:${min}:${sec} ${ampm}`;
+const alarmTime = "06:54:00 PM"
+        if (alarmTime === clock.innerText) {
     console.log('alarm working')
     alert('working')
         };
@@ -81,6 +81,7 @@ const clock = document.getElementById('clock')
 
 // updates time value from getTime function every 1000 milliseconds so that clock counts seconds in real time
 setInterval(getTime, 1000)
+
 
 // event handler to run setAlarm function when button is clicked
 alarmBtn.addEventListener('click', setAlarm);
