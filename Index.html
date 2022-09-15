@@ -10,7 +10,26 @@
     
 </head>
 <body>
-    <div id="clock"></div>
+    <div class="main_container">
+        <div id="clock"></div>
+            <div>
+                <p>Alarm</p>
+                <select>
+                    <option value="Hour" selected hidden>Hour</option>
+                </select>
+
+                <select>
+                    <option value="Minute" selected hidden>Minute</option>
+                </select>
+                
+                <select>
+                    <option value="AM/PM" selected hidden>AM/PM</option>
+                </select>
+                
+            </div>
+            
+            <button id="alarm">Set alarm</button>
+    </div>
 </body>
 <script src='/js/main.js'></script>
 </html>
