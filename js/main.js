@@ -3,10 +3,11 @@ const selectors = document.querySelectorAll('select')
 // grab alarm button
 const alarmBtn = document.getElementById('alarm')
 
-function options() {
+
+function select() {
     // selectors[0].innerHTML = selectors[1].innerHTML = selectors[2].innerHTML = "";
-    selectors[0].innerHTML = `<option value="Hour" selected disabled hidden>Hour</option>`;
-    selectors[1].innerHTML = `<option value="Minute" selected disabled hidden>Minute</option>`;
+    selectors[0].innerHTML = `<option value="hrs" selected disabled hidden>Hour</option>`;
+    selectors[1].innerHTML = `<option value="min" selected disabled hidden>Minute</option>`;
     selectors[2].innerHTML = `<option value="AM/PM" selected disabled hidden>AM/PM</option>`;
 
     // Loop through 12hrs for selector
@@ -32,7 +33,7 @@ function options() {
         selectors[2].firstElementChild.insertAdjacentHTML("afterend", option);
     }
 }
-options();
+select();
 
 
 
@@ -42,6 +43,8 @@ const clock = document.getElementById('clock')
     var hrs = time.getHours()
     var min = time.getMinutes()
     var sec = time.getSeconds()
+
+  
 
 // if hrs is greater than or = to 12 then the time is PM else AM
     if (hrs >= 12) {
@@ -67,9 +70,14 @@ const clock = document.getElementById('clock')
 
 // clock text = values of hrs, min, sec, and ampm
 // adds number values together with colon ":" and ' (single space)' so that innerText = hrs:min:sec am/pm
-    clock.innerText = hrs + ':' + min + ':' + sec + ' ' + ampm;
+    // clock.innerText = hrs + ':' + min + ':' + sec + ' ' + ampm;
+    clock.innerText = `${hrs}:${min}:${sec} ${ampm}`;
 
-}
+        if (alarmTime === `${hrs}:${min}:${sec} ${ampm}`) {
+    console.log('alarm working')
+    alert('working')
+        };
+};
 
 // updates time value from getTime function every 1000 milliseconds so that clock counts seconds in real time
 setInterval(getTime, 1000)
@@ -80,6 +88,3 @@ alarmBtn.addEventListener('click', setAlarm);
 function setAlarm() {
     console.log('clicked')
 }
-
-
-
