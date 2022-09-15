@@ -71,7 +71,15 @@ const clock = document.getElementById('clock')
 
 }
 
-
+// updates time value from getTime function every 1000 milliseconds so that clock counts seconds in real time
 setInterval(getTime, 1000)
+
+// event handler to run setAlarm function when button is clicked
+alarmBtn.addEventListener('click', setAlarm);
+
+function setAlarm() {
+    console.log('clicked')
+}
+
 
 
