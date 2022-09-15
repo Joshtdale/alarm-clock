@@ -1,4 +1,5 @@
 
+
 function getTime() {
 
     const time = new Date()
@@ -8,4 +9,4 @@ function getTime() {
     console.log(hrs, min, sec)
 }
 
-setInterval(getTime, 1000)
+// setInterval(getTime, 1000)
