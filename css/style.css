@@ -1,1 +1,49 @@
+body {
+    display: grid;
+    background-color: black;
+    grid-template-columns: 1fr 80vw 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100vh;
+    align-items: center;
+    justify-items: center;
+}
 
+select {
+    /* appearance: none; */
+    background-color: grey;
+    opacity: 0.9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0 1em 0 0;
+    cursor: pointer;
+}
+
+p {
+    color: white;
+}
+
+button {
+    background-color: grey;
+    border: none;
+    color: white;
+    width: 10vw;
+    height: 3vh;
+    margin: 5vh;
+    border-radius: 5px;
+}
+
+.main_container {
+    display: grid;
+    grid-column: 2;
+    grid-row: 2;
+    align-items: center;
+    justify-items: center;
+}
+
+#clock {
+    font-size: 10vh;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    opacity: 0.5; 
+}
