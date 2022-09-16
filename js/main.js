@@ -5,7 +5,7 @@ const alarmBtn = document.getElementById('alarm')
 
 
 function select() {
-    selectors[0].innerHTML = selectors[1].innerHTML = selectors[2].innerHTML = "";
+    // selectors[0].innerHTML = selectors[1].innerHTML = selectors[2].innerHTML = "";
     selectors[0].innerHTML = `<option value="hrs" selected disabled hidden>Hour</option>`;
     selectors[1].innerHTML = `<option value="min" selected disabled hidden>Minute</option>`;
     selectors[2].innerHTML = `<option value="AM/PM" selected disabled hidden>AM/PM</option>`;
@@ -44,11 +44,10 @@ function getTime() {
     var min = time.getMinutes()
     var sec = time.getSeconds()
 
-
-
     // if hrs is greater than or = to 12 then the time is PM else AM
-    if (hrs >= 12) {
+    if (hrs > 12) {
         hrs = hrs - 12;
+    } else if (hrs >=12 ) {
         ampm = "PM";
     } else {
         ampm = "AM";
@@ -68,27 +67,22 @@ function getTime() {
         sec = '0' + sec;
     };
 
-    // clock text = values of hrs, min, sec, and ampm
     // adds number values together with colon ":" and ' (single space)' so that innerText = hrs:min:sec am/pm
     clock.innerText = hrs + ':' + min + ':' + sec + ' ' + ampm;
-    // clock.innerText = `${hrs}:${min}:${sec} ${ampm}`;
+
     const alarmTime = selectors[0].value + ':' + selectors[1].value + ':' + '00' + ' ' + selectors[2].value;
+
     if (alarmTime === clock.innerText) {
         var alarm = new Audio('images/Daydreaming.mp3')
         alarm.play();
-        // alert('Wake up!');
-        console.log('alarm working')
+        let clock = document.getElementById('clock')
         document.body.style.backgroundColor = 'white';
-        document.body.style.color = 'black';
-
-        
-
+        clock.style.color = 'black'; 
     };
 };
 
 // updates time value from getTime function every 1000 milliseconds so that clock counts seconds in real time
 setInterval(getTime, 1000)
-
 
 // event handler to run setAlarm function when button is clicked
 alarmBtn.addEventListener('click', resetAlarm);
