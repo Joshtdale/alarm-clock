@@ -5,6 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Alarm Clock</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="images/bell.jpg" />
     <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
     
@@ -14,22 +15,24 @@
         <div id="clock"></div>
             <div>
                 <p>Alarm</p>
+                <form id="myForm">
                 <select>
-                    <option value="Hour" selected hidden>Hour</option>
+                    <option value="hrs" selected hidden>Hour</option>
                 </select>
 
                 <select>
-                    <option value="Minute" selected hidden>Minute</option>
+                    <option value="min" selected hidden>Minute</option>
                 </select>
                 
                 <select>
                     <option value="AM/PM" selected hidden>AM/PM</option>
                 </select>
-                
+                </form>
             </div>
             
-            <button id="alarm">Set alarm</button>
+            <button id="alarm">New alarm</button>
     </div>
+    <script src='/js/main.js'></script>
 </body>
-<script src='/js/main.js'></script>
+
 </html>
