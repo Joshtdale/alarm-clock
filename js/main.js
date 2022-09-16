@@ -44,7 +44,7 @@ const clock = document.getElementById('clock')
     var min = time.getMinutes()
     var sec = time.getSeconds()
 
-  
+
 
 // if hrs is greater than or = to 12 then the time is PM else AM
     if (hrs >= 12) {
@@ -72,11 +72,12 @@ const clock = document.getElementById('clock')
 // adds number values together with colon ":" and ' (single space)' so that innerText = hrs:min:sec am/pm
     clock.innerText = hrs + ':' + min + ':' + sec + ' ' + ampm;
     // clock.innerText = `${hrs}:${min}:${sec} ${ampm}`;
-const alarmTime = "06:54:00 PM"
+const alarmTime = selectors[0].value + ':' + selectors[1].value + ':' + '00' +' ' + selectors[2].value;
         if (alarmTime === clock.innerText) {
     console.log('alarm working')
     alert('working')
         };
+        console.log(alarmTime)
 };
 
 // updates time value from getTime function every 1000 milliseconds so that clock counts seconds in real time
