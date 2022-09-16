@@ -74,10 +74,14 @@ function getTime() {
     // clock.innerText = `${hrs}:${min}:${sec} ${ampm}`;
     const alarmTime = selectors[0].value + ':' + selectors[1].value + ':' + '00' + ' ' + selectors[2].value;
     if (alarmTime === clock.innerText) {
-
-       
+        var alarm = new Audio('images/Daydreaming.mp3')
+        alarm.play();
+        // alert('Wake up!');
         console.log('alarm working')
-        alert('working')
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
+
+        
 
     };
 };
@@ -87,12 +91,12 @@ setInterval(getTime, 1000)
 
 
 // event handler to run setAlarm function when button is clicked
-alarmBtn.addEventListener('click', setAlarm);
+alarmBtn.addEventListener('click', resetAlarm);
 
-function setAlarm() {
+function resetAlarm() {
     document.getElementById('myForm').reset()
 }
 
-const img = document.createElement('img')
-img.setAttribute('src', '/images/wake-up.jpeg') 
-document.body.appendChild('img')
+// const img = document.createElement('img')
+// img.setAttribute('src', '/images/wake-up.jpeg') 
+// document.body.appendChild('img')
