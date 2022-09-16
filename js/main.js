@@ -75,8 +75,12 @@ function getTime() {
     const alarmTime = selectors[0].value + ':' + selectors[1].value + ':' + '00' + ' ' + selectors[2].value;
     if (alarmTime === clock.innerText) {
         var alarm = new Audio('images/Daydreaming.mp3')
-        alarm.play() && alert('Wake up!')
+        alarm.play();
+        // alert('Wake up!');
         console.log('alarm working')
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
+
         
 
     };
